@@ -122,3 +122,51 @@ void displayTotalBooks() {
     }
     printf("Nombre total de livres en stock : %d\n", total);
 }
+
+// Fonction principale
+int main() {
+    int choice;
+    
+    do {
+        printf("Menu :\n");
+        printf("1. Ajouter un livre\n");
+        printf("2. Afficher tous les livres\n");
+        printf("3. Rechercher un livre\n");
+        printf("4. Mettre à jour la quantité d'un livre\n");
+        printf("5. Supprimer un livre\n");
+        printf("6. Afficher le nombre total de livres\n");
+        printf("7. Quitter\n");
+        printf("Entrez votre choix : ");
+        scanf("%d", &choice);
+        // Vider le tampon de l'entrée
+        getchar();
+
+        switch (choice) {
+            case 1:
+                addBook();
+                break;
+            case 2:
+                displayBooks();
+                break;
+            case 3:
+                searchBook();
+                break;
+            case 4:
+                updateQuantity();
+                break;
+            case 5:
+                deleteBook();
+                break;
+            case 6:
+                displayTotalBooks();
+                break;
+            case 7:
+                printf("Au revoir !\n");
+                break;
+            default:
+                printf("Choix invalide.\n");
+        }
+    } while (choice != 7);
+
+    return 0;
+}
