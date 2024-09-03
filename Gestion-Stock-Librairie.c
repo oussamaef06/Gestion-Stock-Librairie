@@ -49,3 +49,23 @@ void displayBooks() {
         printf("Quantité : %d\n\n", quantities[i]);
     }
 }
+
+
+void searchBook() {
+    char title[50];
+    printf("Entrez le titre du livre à rechercher : ");
+    fgets(title, 50, stdin);
+    title[strcspn(title, "\n")] = 0; // Supprimer le saut de ligne
+
+    for (int i = 0; i < bookCount; i++) {
+        if (strcmp(titles[i], title) == 0) {
+            printf("Livre trouvé !\n");
+            printf("Titre : %s\n", titles[i]);
+            printf("Auteur : %s\n", authors[i]);
+            printf("Prix : %.2f\n", prices[i]);
+            printf("Quantité : %d\n\n", quantities[i]);
+            return;
+        }
+    }
+    printf("Livre non trouvé.\n");
+}
