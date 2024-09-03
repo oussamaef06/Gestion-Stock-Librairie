@@ -113,3 +113,12 @@ void deleteBook() {
     }
     printf("Livre non trouvé.\n");
 }
+
+
+void displayTotalBooks() {
+    int total = 0;
+    for (int i = 0; i < bookCount; i++) {
+        total += quantities[i];
+    }
+    printf("Nombre total de livres en stock : %d\n", total);
+}
