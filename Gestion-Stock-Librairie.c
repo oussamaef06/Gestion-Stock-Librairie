@@ -89,3 +89,27 @@ void updateQuantity() {
     }
     printf("Livre non trouvé.\n");
 }
+
+
+
+void deleteBook() {
+    char title[50];
+    printf("Entrez le titre du livre à supprimer : ");
+    fgets(title, 50, stdin);
+    title[strcspn(title, "\n")] = 0; // Supprimer le saut de ligne
+
+    for (int i = 0; i < bookCount; i++) {
+        if (strcmp(titles[i], title) == 0) {
+            for (int j = i; j < bookCount - 1; j++) {
+                strcpy(titles[j], titles[j + 1]);
+                strcpy(authors[j], authors[j + 1]);
+                prices[j] = prices[j + 1];
+                quantities[j] = quantities[j + 1];
+            }
+            bookCount--;
+            printf("Livre supprimé.\n");
+            return;
+        }
+    }
+    printf("Livre non trouvé.\n");
+}
