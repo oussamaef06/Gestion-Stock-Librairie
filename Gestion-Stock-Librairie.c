@@ -17,11 +17,11 @@ void addBook() {
     
     printf("Entrez le titre du livre : ");
     fgets(titles[bookCount], 50, stdin);
-    titles[bookCount][strcspn(titles[bookCount], "\n")] = 0; // Supprimer le saut de ligne
+    titles[bookCount][strcspn(titles[bookCount], "\n")] = 0;
 
     printf("Entrez l'auteur du livre : ");
     fgets(authors[bookCount], 50, stdin);
-    authors[bookCount][strcspn(authors[bookCount], "\n")] = 0; // Supprimer le saut de ligne
+    authors[bookCount][strcspn(authors[bookCount], "\n")] = 0;
 
     printf("Entrez le prix du livre : ");
     scanf("%f", &prices[bookCount]);
@@ -29,7 +29,7 @@ void addBook() {
     printf("Entrez la quantité en stock : ");
     scanf("%d", &quantities[bookCount]);
     
-    // Vider le tampon de l'entrée
+
     getchar();
 
     bookCount++;
@@ -55,7 +55,7 @@ void searchBook() {
     char title[50];
     printf("Entrez le titre du livre à rechercher : ");
     fgets(title, 50, stdin);
-    title[strcspn(title, "\n")] = 0; // Supprimer le saut de ligne
+    title[strcspn(title, "\n")] = 0;
 
     for (int i = 0; i < bookCount; i++) {
         if (strcmp(titles[i], title) == 0) {
