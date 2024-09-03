@@ -34,3 +34,18 @@ void addBook() {
 
     bookCount++;
 }
+
+
+void displayBooks() {
+    if (bookCount == 0) {
+        printf("Aucun livre en stock.\n");
+        return;
+    }
+
+    for (int i = 0; i < bookCount; i++) {
+        printf("Titre : %s\n", titles[i]);
+        printf("Auteur : %s\n", authors[i]);
+        printf("Prix : %.2f\n", prices[i]);
+        printf("Quantité : %d\n\n", quantities[i]);
+    }
+}
