@@ -75,13 +75,13 @@ void updateQuantity() {
     char title[50];
     printf("Entrez le titre du livre dont vous souhaitez modifier la quantité : ");
     fgets(title, 50, stdin);
-    title[strcspn(title, "\n")] = 0; // Supprimer le saut de ligne
+    title[strcspn(title, "\n")] = 0;
 
     for (int i = 0; i < bookCount; i++) {
         if (strcmp(titles[i], title) == 0) {
             printf("Entrez la nouvelle quantité : ");
             scanf("%d", &quantities[i]);
-            // Vider le tampon de l'entrée
+
             getchar();
             printf("Quantité mise à jour.\n");
             return;
@@ -96,7 +96,7 @@ void deleteBook() {
     char title[50];
     printf("Entrez le titre du livre à supprimer : ");
     fgets(title, 50, stdin);
-    title[strcspn(title, "\n")] = 0; // Supprimer le saut de ligne
+    title[strcspn(title, "\n")] = 0;
 
     for (int i = 0; i < bookCount; i++) {
         if (strcmp(titles[i], title) == 0) {
