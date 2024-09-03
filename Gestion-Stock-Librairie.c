@@ -123,7 +123,7 @@ void displayTotalBooks() {
     printf("Nombre total de livres en stock : %d\n", total);
 }
 
-// Fonction principale
+
 int main() {
     int choice;
     
@@ -138,7 +138,7 @@ int main() {
         printf("7. Quitter\n");
         printf("Entrez votre choix : ");
         scanf("%d", &choice);
-        // Vider le tampon de l'entrée
+
         getchar();
 
         switch (choice) {
